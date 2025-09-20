@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .containerr p:nth-child(1) {
+        border: 2px solid red;
+        height: 200px;
+        width: 300px;
+        background-color: aqua;
+        color: maroon;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        position: absolute;
+        margin-left: 200px;
+        z-index: 2;
+        border-radius: 10px;
+    }
+
+    .containerr p:nth-child(2) {
+        border: 2px solid yellow;
+        height: 200px;
+        width: 300px;
+        background-color: rgb(34, 100, 42);
+        color: maroon;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        position: relative;
+        margin-top: 20px;
+        margin-left: 100px;
+        z-index: 1;
+        border-radius: 10px;
+    }
+
+    .containerr p:nth-child(3) {
+        border: 2px solid black;
+        height: 200px;
+        width: 400px;
+        background-color: rgb(216, 37, 201);
+        color: rgb(12, 12, 12);
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        position: fixed;
+        margin-top: 100px;
+        margin-left: 700px;
+        border-radius: 10px;
+    }
+
+    .containerr p:nth-child(4) {
+        border: 2px solid red;
+        height: 200px;
+        width: 400px;
+        background-color: rgb(68, 126, 126);
+        color: rgb(8, 1, 1);
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        position: sticky;
+        margin-top: 150px;
+        margin-left: 100px;
+        border-radius: 10px;
+    }
+
+    .containerr p:nth-child(5) {
+        border: 2px solid red;
+        height: 200px;
+        width: 400px;
+        background-color: gray;
+        color: rgb(14, 2, 2);
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        position: sticky;
+        margin-top: 150px;
+        margin-left: 100px;
+        border-radius: 10px;
+    }
+</style>
+
+<body>
+    <div class="containerr">
+        <p>Vicky</p>
+        <p>somu</p>
+        <p>Tridav</p>
+        <p>ANURAG</p>
+        <p>Santosh</p>
+    </div>
+</body>
+
+</html>

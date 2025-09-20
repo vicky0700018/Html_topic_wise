@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HTML Table Demo</title>
+  <style>
+    :root{
+      --bg: #0f172a;         /* slate-900 */
+      --card: #111827;       /* gray-900 */
+      --muted: #94a3b8;      /* slate-400 */
+      --text: #e5e7eb;       /* gray-200 */
+      --accent: #22d3ee;     /* cyan-400 */
+      --ring: rgba(34,211,238,.25);
+      --line: #1f2937;       /* gray-800 */
+      --success: #10b981;    /* emerald-500 */
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin:0; font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      color:var(--text); background: radial-gradient(1200px 800px at 10% 0%, #0b1220, var(--bg));
+      display:grid; place-items:center; padding:24px;
+    }
+
+    .card{
+      width:min(1100px, 95vw); background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+      border:1px solid #1f2937; border-radius:20px; box-shadow:0 10px 30px rgba(0,0,0,.4);
+      backdrop-filter:saturate(120%) blur(6px);
+    }
+
+    .header{ padding:24px 24px 8px; }
+    .title{ font-size:clamp(1.25rem, 1rem + 1.2vw, 1.75rem); margin:0 0 4px; }
+    .subtitle{ margin:0; color:var(--muted); font-size:0.95rem; }
+
+    .table-wrap{ overflow-x:auto; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    table{ width:100%; border-collapse:separate; border-spacing:0; min-width:720px; }
+    caption{ text-align:left; padding:16px 24px; color:var(--muted); font-size:.95rem; }
+
+    thead th{
+      position:sticky; top:0; z-index:1;
+      background: #0b1220; /* sticky header background */
+      text-align:left; font-weight:600; letter-spacing:.01em;
+      border-bottom:1px solid var(--line);
+    }
+
+    th, td{ padding:14px 16px; vertical-align:middle; }
+    tbody tr{ border-bottom:1px solid var(--line); }
+    tbody tr:nth-child(odd){ background: rgba(255,255,255,.02); }
+
+    /* Column alignment via colgroup */
+    .num { text-align:right; font-variant-numeric: tabular-nums; }
+    .center { text-align:center; }
+
+    /* Hover & focus states */
+    tbody tr:hover{ background: rgba(34,211,238,.05); }
+    a.inline{ color:var(--accent); text-decoration:none; }
+    a.inline:focus-visible{ outline:3px solid var(--ring); border-radius:6px; }
+
+    tfoot td{ border-top:2px solid var(--line); font-weight:600; }
+    .badge{
+      display:inline-block; padding:.15rem .5rem; border-radius:999px; font-size:.8rem; line-height:1.2; 
+      background:rgba(16,185,129,.15); color:var(--success); border:1px solid rgba(16,185,129,.35);
+    }
+
+    /* Compact mode toggle */
+    .controls{ display:flex; gap:8px; align-items:center; padding:16px 24px; }
+    .switch{ cursor:pointer; display:inline-flex; align-items:center; gap:.5rem; user-select:none; }
+    .switch input{ appearance:none; width:42px; height:24px; background:#1f2937; border-radius:999px; position:relative; outline:none; transition:.2s; border:1px solid #2b3441; }
+    .switch input:checked{ background:#0d2630; border-color:#16323f; }
+    .switch input::after{ content:""; position:absolute; width:18px; height:18px; border-radius:50%; background:white; top:2.5px; left:3px; transition:.2s; }
+    .switch input:checked::after{ left:21px; }
+    .compact table td, .compact table th{ padding:8px 10px; }
+  </style>
+</head>
+<body>
+  <main class="card" id="card">
+    <header class="header">
+      <h1 class="title">Accessible, Responsive <code>&lt;table&gt;</code> Example</h1>
+      <p class="subtitle">Includes <code>&lt;caption&gt;</code>, sticky header, <code>&lt;colgroup&gt;</code>, proper <code>scope</code>, zebra rows, and a responsive scroll container.</p>
+    </header>
+
+    <div class="controls">
+      <label class="switch" title="Toggle compact density">
+        <input id="density" type="checkbox" aria-label="Toggle compact table density">
+        <span>Compact mode</span>
+      </label>
+      <a class="inline" href="#" onclick="window.print(); return false;">Print</a>
+    </div>
+
+    <div class="table-wrap" role="region" aria-label="Student grade table" tabindex="0">
+      <table aria-describedby="tbl-desc">
+        <caption id="tbl-desc">Sample class record for Spring 2025</caption>
+
+        < Define column alignment/widths >
+        <colgroup>
+          <col span="1" style="width: 28%" />
+          <col span="1" style="width: 16%" />
+          <col span="1" style="width: 16%" />
+          <col span="1" style="width: 16%" />
+          <col span="1" style="width: 12%" />
+          <col span="1" style="width: 12%" />
+        </colgroup-->
+
+        <thead>
+          <tr>
+            <th scope="col">Student</th>
+            <th scope="col" class="num">Quiz (10)</th>
+            <th scope="col" class="num">Midterm (30)</th>
+            <th scope="col" class="num">Project (30)</th>
+            <th scope="col" class="num">Final (30)</th>
+            <th scope="col" class="num">Total (100)</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th scope="row">Aditi Sharma <span class="badge" aria-label="submitted project early">early</span></th>
+            <td class="num">9</td>
+            <td class="num">26</td>
+            <td class="num">28</td>
+            <td class="num">27</td>
+            <td class="num">90</td>
+          </tr>
+          <tr>
+            <th scope="row">Rohan Mehta</th>
+            <td class="num">8</td>
+            <td class="num">22</td>
+            <td class="num">25</td>
+            <td class="num">24</td>
+            <td class="num">79</td>
+          </tr>
+          <tr>
+            <th scope="row">Kavya Iyer</th>
+            <td class="num">10</td>
+            <td class="num">27</td>
+            <td class="num">29</td>
+            <td class="num">28</td>
+            <td class="num">94</td>
+          </tr>
+          <tr>
+            <th scope="row">Arjun Singh</th>
+            <td class="num">7</td>
+            <td class="num">24</td>
+            <td class="num">26</td>
+            <td class="num">25</td>
+            <td class="num">82</td>
+          </tr>
+          <tr>
+            <th scope="row">Meera Joshi</th>
+            <td class="num">9</td>
+            <td class="num">28</td>
+            <td class="num">27</td>
+            <td class="num">29</td>
+            <td class="num">93</td>
+          </tr>
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <td colspan="5">Class average</td>
+            <td class="num">87.6</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <div class="header" style="padding-top:12px">
+      <h2 class="title" style="font-size:1.1rem">Another pattern: Grouped headers + rowspan/colspan</h2>
+      <p class="subtitle">Handy for timetables, price matrices, or comparison charts.</p>
+    </div>
+
+    <div class="table-wrap" role="region" aria-label="Weekly timetable" tabindex="0">
+      <table>
+        <caption>Weekly Timetable</caption>
+        <thead>
+          <tr>
+            <th scope="col" rowspan="2">Day</th>
+            <th scope="col" colspan="2">Morning</th>
+            <th scope="col" colspan="2">Afternoon</th>
+          </tr>
+          <tr>
+            <th scope="col">9–10</th>
+            <th scope="col">10–11</th>
+            <th scope="col">2–3</th>
+            <th scope="col">3–4</th>
+          </tr>
+        </thead>
+        <tbod
+        
