@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Form</title>
+    <!-- 
+    <title> sets the browser tab name.
+    -->
+</head>
+
+<body>
+
+    <h2>Student Information Form</h2>
+    <!-- 
+<h2> used as form heading.
+-->
+
+    <form>
+        <!-- 
+    <form> is used to collect user input.
+    All form controls must be inside this tag.
+    -->
+
+        <label>Name:</label>
+        <!-- 
+    <label> gives a title to input field.
+    Improves readability & accessibility.
+    -->
+        <input type="text" placeholder="Enter Your Name">
+        <!-- 
+    type="text" is used for normal text input.
+    placeholder shows hint text inside input box.
+    -->
+        <br>
+
+        <label>Email:</label>
+        <input type="email" placeholder="1234@gmail.com">
+        <!-- 
+    type="email" validates email format automatically.
+    -->
+        <br>
+
+        <label>Mobile No:</label>
+        <input type="number" placeholder="Enter Your Mobile No">
+        <!-- 
+    type="number" allows only numeric values.
+    -->
+        <br>
+
+        <label>Address</label>
+        <textarea rows="3" cols="30"></textarea>
+        <!-- 
+    <textarea> is used for multi-line input.
+    rows & cols define size of the textarea.
+    -->
+        <br>
+
+        <label>Date Of Birth</label>
+        <input type="date">
+        <!-- 
+    type="date" shows date picker.
+    -->
+        <br><br>
+
+        <label>Gender</label>
+        <br>
+
+        <input type="radio" name="Gender">
+        <label>Male</label>
+        <br>
+
+        <input type="radio" name="Gender">
+        <label>Female</label>
+        <br>
+
+        <input type="radio" name="Gender">
+        <label>Other</label>
+        <!-- 
+    type="radio" allows single selection.
+    Same name attribute groups radio buttons.
+    -->
+        <br>
+
+        <label>Select Your Country</label>
+        <select name="Country">
+            <!-- 
+        <select> creates dropdown list.
+        -->
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+            <option value="Pak">Pakistan</option>
+            <option value="Russia">Russia</option>
+            <option value="Spain">Spain</option>
+            <option value="Japan">Japan</option>
+            <option value="Korea">Korea</option>
+            <option value="Germany">Germany</option>
+            <!-- 
+        <option> defines items inside dropdown.
+        -->
+        </select>
+        <br><br>
+
+        <label>Upload Documents</label>
+        <input type="file">
+        <!-- 
+    type="file" is used to upload files.
+    -->
+        <br>
+
+        <input type="checkbox">
+        <label>I agree all the terms and conditions</label>
+        <!-- 
+    checkbox is used for agreement or multiple selection.
+    -->
+        <br>
+
+        <button>Submit</button>
+        <!-- 
+    <button> submits the form.
+    -->
+
+    </form>
+
+</body>
+
+</html>
