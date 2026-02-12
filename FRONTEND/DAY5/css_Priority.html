@@ -1,0 +1,59 @@
+<!-- ✅ Priority Order (Highest to Lowest)
+1. Inline CSS  (Highest priority)
+2. Internal CSS
+3. External CSS (Lowest priority)
+
+
+
+📄 priority.css (External CSS)
+h1 {
+  color: red;
+} -->
+
+
+
+📄 HTML File
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Priority</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="./priority.css">
+
+  <!-- Internal CSS -->
+  <style>
+    h1 {
+      color: green;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Inline CSS -->
+  <h1 style="color: gray;">
+    This is CSS priority comparison class
+  </h1>
+
+</body>
+</html>
+
+
+
+<!-- What Happens Here?
+->External CSS says → red
+->Internal CSS says → green
+->Inline CSS says → gray
+
+Final Output Color → gray
+Because Inline has highest priority.
+
+
+Task Day 4
+
+Learn About Flexbox -->
+
