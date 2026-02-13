@@ -1,0 +1,177 @@
+<!-- What is Flexbox?
+📌 Definition
+-> Flexbox (Flexible Box Layout) is a CSS layout system
+   used to arrange elements in rows or columns.
+-> It makes alignment and spacing easier.
+
+
+🔹 Important Rules of Flexbox
+1. Flexbox works on the parent element.
+2. We apply: display: flex; to the parent.
+3. By default, flex-direction is row.
+
+
+Basic Flexbox Example (Column Layout)
+Parent = div
+
+
+Children = p tags
+
+
+display: flex applied to div -->
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flexbox Example</title>
+
+  <style>
+    /* Styling child boxes */
+    p {
+      color: whitesmoke;
+      background-color: black;
+      height: 200px;
+      width: 200px;
+      font-size: 20px;
+      text-align: center;
+      border-radius: 16px;
+    }
+
+    /* Parent container */
+    div {
+      display: flex;
+
+      /* Default is row */
+      flex-direction: column;
+
+      /* Align items vertically (cross-axis) */
+      align-items: center;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div>
+    <p>First</p>
+    <p>Second</p>
+    <p>Third</p>
+    <p>Fourth</p>
+  </div>
+
+</body>
+</html>
+
+
+<!-- 
+🔹 Flexbox Axes Understanding
+Main Axis:
+→ Controlled by flex-direction
+→ If row → X-axis
+→ If column → Y-axis
+
+Cross Axis:
+→ Opposite direction of main axis
+
+
+🔹 justify-content
+-> Used to align items on the MAIN axis.
+
+Examples:
+justify-content: start;
+justify-content: center;
+justify-content: end;
+justify-content: space-between;
+justify-content: space-around;
+justify-content: space-evenly;
+
+
+
+🔹 align-items
+-> Used to align items on the CROSS axis.
+
+Examples:
+align-items: start;
+align-items: center;
+align-items: end;
+
+
+
+Real Example – Flexbox Navbar
+Now we apply flexbox in real layout (Navigation Bar). -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flex Navbar</title>
+
+  <style>
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    img {
+      height: 100px;
+      width: 100px;
+    }
+
+    ul {
+      display: flex;
+      gap: 30px;
+    }
+
+    ul li {
+      list-style: none;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    ul li a {
+      text-decoration: none;
+      color: gray;
+    }
+
+    button {
+      height: 50px;
+      width: 100px;
+      background-color: orangered;
+      color: whitesmoke;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="">
+      <img src="../images/favicon.png" alt="logo">
+    </a>
+
+    <ul>
+      <li><a href="">Home</a></li>
+      <li><a href="">Contact</a></li>
+      <li><a href="">About</a></li>
+      <li><a href="">Privacy Policy</a></li>
+    </ul>
+
+    <button>Login</button>
+  </nav>
+
+</body>
+</html>
+
+
+
