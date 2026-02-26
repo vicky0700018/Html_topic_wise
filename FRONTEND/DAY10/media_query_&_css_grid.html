@@ -1,0 +1,111 @@
+<!-- Topics Covered:
+Media Query
+display: grid
+Media Query
+Definition
+-> A Media Query is used to make a website responsive.
+ It applies CSS rules based on screen size or device type.
+It is mainly used for mobile-friendly design.
+
+Basic Syntax
+@media (max-width: 600px) {
+ /* CSS rules here */
+}
+
+Meaning:
+If the screen width is 600px or less, apply these styles. -->
+Example
+<!DOCTYPE html>
+<html>
+<head>
+ <style>
+   p {
+     background-color: black;
+     color: white;
+   }
+
+   @media (max-width: 600px) {
+     p {
+       background-color: green;
+     }
+   }
+ </style>
+</head>
+<body>
+
+ <p>Responsive Text</p>
+
+</body>
+</html>
+
+<!-- Normal screen → Black
+Small screen → Green
+
+display: grid
+Definition
+CSS Grid is a two-dimensional layout system.
+ It allows you to arrange elements in rows and columns.
+Grid works on the parent element.
+How to Activate Grid
+.container {
+ display: grid;
+}
+
+
+Defining Columns
+Fixed Width Columns
+grid-template-columns: 200px 200px 200px;
+
+Creates three columns with fixed width.
+
+Using Fraction (fr)
+grid-template-columns: 1fr 2fr 1fr;
+
+fr means “fraction of available space”.
+2fr takes more space than 1fr.
+
+Using repeat()
+grid-template-columns: repeat(4, 1fr);
+
+Creates four equal columns.
+
+Complete Grid Example -->
+<!DOCTYPE html>
+<html>
+<head>
+ <style>
+   .container {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     gap: 10px;
+   }
+
+   .box {
+     background-color: black;
+     color: white;
+     padding: 20px;
+     text-align: center;
+   }
+ </style>
+</head>
+<body>
+
+ <div class="container">
+   <div class="box">1</div>
+   <div class="box">2</div>
+   <div class="box">3</div>
+   <div class="box">4</div>
+ </div>
+
+</body>
+</html>
+
+
+
+
+
+<!-- TASK
+
+
+Explore Media Query and display grid
+Make 1 Project Using Media Query and display grid -->
