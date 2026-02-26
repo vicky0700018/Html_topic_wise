@@ -1,0 +1,129 @@
+<!-- What is z-index?
+Definition
+→ z-index controls the stacking order of elements.
+→ Higher z-index value appears on top.
+→ Lower value appears behind.
+Important Rule:
+z-index works only on positioned elements.
+(position: relative, absolute, fixed, sticky)
+It does NOT work with: position: static;
+Example of z-index -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Z-Index Example</title>
+
+    <style>
+        .box1 {
+            height: 200px;
+            width: 300px;
+            background-color: red;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            z-index: 1;
+        }
+
+        .box2 {
+            height: 200px;
+            width: 300px;
+            background-color: blue;
+            position: absolute;
+            left: 150px;
+            top: 150px;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box1"></div>
+    <div class="box2"></div>
+
+</body>
+
+</html>
+
+<!-- What Happens Here?
+→ Blue box has z-index: 2
+→ Red box has z-index: 1
+→ Blue appears on top
+Because 2 > 1
+
+Important Rule
+Higher z-index → Comes Forward
+Lower z-index → Goes Back
+
+Real Example (Image Overlap Card) -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Image Overlay</title>
+
+    <style>
+        .card {
+            position: relative;
+            width: 400px;
+            height: 300px;
+        }
+
+        img:nth-child(1) {
+            height: 200px;
+            width: 300px;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            z-index: 1;
+            border-radius: 10px;
+        }
+
+        img:nth-child(2) {
+            height: 150px;
+            width: 250px;
+            position: absolute;
+            left: 100px;
+            top: 80px;
+            z-index: 2;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <img src="./images/car-2.jpeg" alt="">
+        <img src="./images/car.jpeg" alt="">
+        <h2>Car</h2>
+        <p>This is car</p>
+    </div>
+
+</body>
+
+</html>
+<!-- 
+
+When Scroll Happens
+Now connecting with previous topic:
+Fixed vs Sticky while scrolling
+position: fixed
+→ Always stays in same position
+→ Does NOT move while scrolling
+position: sticky
+→ Acts like relative
+→ When scroll reaches top value → becomes fixed
+
+
+
+Difference: Relative vs Sticky
+Relative:
+ → Always moves from original position
+ → Does not react to scroll
+Sticky:
+ → Acts normal initially
+ → Sticks when scroll limit reached
+ → Requires top, bottom, etc.
+ -->
