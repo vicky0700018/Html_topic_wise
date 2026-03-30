@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+  <ul class="pagination" id="pagination"></ul>
+
+<script>
+let totalPages = 5;
+let currentPage = 1;
+
+function renderPagination(){
+  let html = '';
+
+  for(let i=1;i<=totalPages;i++){
+    html += `<li class="page-item ${i===currentPage?'active':''}">
+      <a class="page-link" href="#" onclick="goToPage(${i})">${i}</a>
+    </li>`;
+  }
+
+  document.getElementById('pagination').innerHTML = html;
+}
+
+function goToPage(page){
+  currentPage = page;
+  renderPagination();
+}
+
+renderPagination();
+
+</script>
+<br>
+<br>
+<table class="table" id="tableData"></table>
+
+<script>
+let data = ["A","B","C","D","E","F","G"];
+let perPage = 3;
+let page = 1;
+
+function renderTable(){
+  let start = (page-1)*perPage;
+  let end = start + perPage;
+  let rows = data.slice(start,end);
+
+  let html = '';
+  rows.forEach(r=>{
+    html += `<tr><td>${r}</td></tr>`;
+  });
+
+  document.getElementById('tableData').innerHTML = html;
+}
+
+renderTable();
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
